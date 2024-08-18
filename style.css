@@ -1,0 +1,55 @@
+/* static/css/styles.css */
+
+
+/* General Styles */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Navbar Styles */
+
+.navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Jumbotron */
+
+.jumbotron {
+    background-color: #343a40;
+    color: #fff;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+}
+
+.jumbotron h1 {
+    font-size: 3rem;
+}
+
+.jumbotron p {
+    font-size: 1.2rem;
+}
+
+
+/* List Group Items */
+
+.list-group-item {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+
+/* Buttons */
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
