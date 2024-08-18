@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Report</title>
+</head>
+<body>
+    <h1>Expense Summary Report</h1>
+
+    <h2>Total Expenses: ${{ total_expenses }}</h2>
+
+    <h3>Bar Chart of Expenses by Category</h3>
+    <img src="{{ url_for('category_chart') }}" alt="Bar Chart">
+
+    <h3>Pie Chart of Expenses by Category</h3>
+    <img src="{{ url_for('category_pie_chart') }}" alt="Pie Chart">
+    
+    <!-- Additional Summary Information -->
+    <h4>Expenses by Category:</h4>
+    <ul>
+        {% for category, expense in zip(categories, expenses) %}
+        <li>{{ category }}: ${{ expense }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
