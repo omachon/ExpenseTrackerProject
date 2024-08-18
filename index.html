@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Welcome to my Expense Tracker</h1>
+
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Expense Tracker!</h1>
+    <p class="lead">Track your expenses easily and visualize them with beautiful charts.</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="{{ url_for('add_expense') }}" role="button">Add Expense</a>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Recent Expenses</h2>
+        <!-- Example list of expenses, replace with your dynamic content -->
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Food
+                <span class="badge badge-primary badge-pill">$120</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Travel
+                <span class="badge badge-primary badge-pill">$450</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Bills
+                <span class="badge badge-primary badge-pill">$320</span>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h2>Expense Summary</h2>
+        <img src="{{ url_for('category_chart') }}" alt="Bar Chart" class="img-fluid">
+    </div>
+</div>
+{% endblock %}
+
+    <!-- Add this to the base.html template inside the body -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Expense Tracker</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('summary_report') }}">Summary Report</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('add_expense') }}">Add Expense</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <a href="{{ url_for('reports') }}">View Reports</a>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
